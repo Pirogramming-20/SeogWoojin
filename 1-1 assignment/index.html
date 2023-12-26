@@ -82,8 +82,7 @@
         }
         #wrap-center{
             width: 1280px;
-            display: inline-block;
-            background-color: yellow;
+            display: inline-block;  
         }
         #header {
             text-align: left;
@@ -227,11 +226,19 @@
                 #search-input{
                     width: 480px;
                     padding: 17px 0;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     line-height: 24px;
                     font-weight: bold;
                     border: none;
                     outline: none;
+                }
+
+                #search-input::placeholder{
+                    color:white;
+                }
+
+                #search-input:focus::placeholder{
+                    color:#e4e4e4;
                 }
                 #search-right{
                     flex: 1;
@@ -278,6 +285,10 @@
                     width: 25px;
                     height: 25px;
                 }
+
+                #search-keyboard:hover::before{
+                    filter: brightness(0.7);
+                }
             </style>
             <div id="search">
                 <form action="">
@@ -285,7 +296,7 @@
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.273 12.845 7.376 0H0v24h7.727V11.155L16.624 24H24V0h-7.727v12.845z"></path></svg>
                     </a>
                     <label for="search-input" class="blind">검색어 입력</label>
-                    <input type="text" id="search-input" placeholder="검색어를 입력하세요" />
+                    <input type="text" id="search-input" placeholder="검색어를 입력하세요." />
                     <div id="search-right">
                         <button href="#" id="search-keyboard">
                             <span class="blind">입력도구</span>
