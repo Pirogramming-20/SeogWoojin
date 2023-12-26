@@ -1,4 +1,3 @@
 # git_tutorial
 
-
-different 
+-> Merge practice
