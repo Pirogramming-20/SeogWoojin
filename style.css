@@ -1,0 +1,87 @@
+body{
+    background-size: cover;
+    background-image: url("https://img.freepik.com/premium-photo/lights-on-sea-background-waves_196038-1983.jpg");
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+  
+.content {
+    width: 80%;
+    height: 30%;
+    display: flex;
+    gap: 1rem;
+  }
+  
+.content > div {
+    padding: 1rem;
+}
+  
+.left {
+    flex-basis: 60%;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+  
+.left > h3 {
+    font-size: 2rem;
+    font-style: italic;
+}
+  
+.box {
+    border: 1px solid black;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    /* 기본값은 transparent이다. */
+    background-color: white;
+  }
+  
+
+.box h2{
+    font-size: 3rem;
+}
+
+.countdown{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.right{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    gap: 1rem;
+  
+}
+
+.right > ul > li{
+    list-style: none;
+    text-decoration: wavy underline;
+    gap:1rem;
+    display: flex;
+}
+
+.right > h3{
+    font-size: 3rem;
+}
+
+.indent{
+    text-indent: 1rem;
+    
+}

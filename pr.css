@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&display=swap');
+
+@font-face {
+  font-family: 'yg-jalnan';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-weight: normal;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+
+  background-image: url("https://img.freepik.com/premium-photo/lights-on-sea-background-waves_196038-1983.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(158, 231, 255);
+
+  font-family: 'Nanum Myeongjo', serif;
+  font-family: 'yg-jalnan';
+
+}
+
+#overlay {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+#main h1 {
+  color: white;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.box {
+  margin: 0 10px;
+  font-size: 24px;
+  background-color: white;
+  padding: 36px;
+  border-radius: 40px;
+}
+
+.box span {
+  display: block;
+  font-size: 72px;
+}
+
+#goals {
+  background-color: white;
+  padding: 50px 60px;
+  border-radius: 40px;
+}
+
+#goals ul {
+  width: max-content;
+}
+
+#goals li {
+  font-size: 24px;
+  margin: 20px 0;
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-underline-offset: 10px;
+  text-decoration-color: rgb(0, 102, 255);
+}
+
+#goals i {
+  margin-right: 10px;
+  color: rgb(0, 102, 255);
+}
+
+#goals ul {
+  margin-top: 55px;
+}
