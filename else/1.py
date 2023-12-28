@@ -1,5 +1,2 @@
-s="""'Python' is a "programming language"
-that lets you work quickly
-and
-integrate systems more effectively."""
-print(s)
+a = tuple(range(-10, 10, 3))
+print(a)
