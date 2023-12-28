@@ -28,55 +28,60 @@
                     <li><i class="fa-solid fa-chevron-down"></i></li>
                 </ul>
                 <div id="nav_right">
-                    <input type="text" id="search" placeholder="Search GitHub">
+                    <div class="search-form">
+                        <input type="text" id="search" placeholder="Search GitHub">
+                       
+                    </div>
                     <button id="signin">
                         Sign in
                     </button>
-                    <button id="signup">sign out
+                    <button id="signup">Sign up
                     </button>
                 </div>
             </div>
         </div>
 
     </nav>
-    <main>
-        <div id="main_left">
-            <h1 style="font-size:60px; font-weight:600;">Built for developers</h1>
-            <h2>Github is a development platform inspired by the<br> way you work.
-                From <span style="font-weight: 900; color:rgb(167, 165, 165);">open source</span> to <span style="font-weight: 900; color:rgb(167, 165, 165);">business</span>, you<br> can host
-                and review code, manage projects and<br> build software alongside 50 million developers.
-            </h2>
+    <div class="main_container">
+        <div id="main_box">
+            <div id="main_left">
+                <h1>Built for developers</h1>
+                <h2>GitHub is a development platform inspired by the<br> way you work.
+                    From <span style="font-weight: 400; color:white;">open source</span> to <span style="font-weight: 900; color:white;">business</span>, you<br> can host
+                    and review code, manage projects and<br> build software alongside 50 million developers.
+                </h2>
+            </div>
+            <div id="main_right" style="display: inline-block;">
+                <ul style="display: inline-block;">
+                    <li>
+                        <span>Username<br></span>
+                        <input class="inputbox" type="text" >
+                    </li>
+                    <li>
+                        <span>Email<br></span>
+                        <input class="inputbox" type="text">
+                    </li>
+                    <li>
+                        <span>Password<br></span>
+                        <input class="inputbox" type="password">
+                    </li>
+                    <li>
+                        <p class="sentence">
+                            Make sure it's at least 15 characters OR at least 8 characters including a number and a lowercase letter. <a href="#">Learn more</a>.</li>
+                        </p>
+                    <li>
+                        <button id="green_button">Sign up for GitHub</button>
+                    </li>
+                    <li>
+                        <p class="sentence" style="margin: 20px 0; font-size:11.5px;">
+                            By clicking "Sign for GitHub", you agree to our <a href="#">Terms of Service</a> and <br>
+                            <a href="#">Privacy Statement</a>. We'll occasionally send you account related emails.
+                        </p>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div id="main_right" style="display: inline-block;">
-            <ul style="display: inline-block;">
-                <li>
-                    <span>Username<br></span>
-                    <input class="inputbox" type="text" >
-                </li>
-                <li>
-                    <span>Email<br></span>
-                    <input class="inputbox" type="text">
-                </li>
-                <li>
-                    <span>Password<br></span>
-                    <input class="inputbox" type="password">
-                </li>
-                <li>
-                    <p class="sentence">
-                        Make sure it's at least 15 chracter including a number and a lowercase letter. <a href="#">Learn more</a>.</li>
-                    </p>
-                <li>
-                    <button id="green_button">Sign up for GitHub</button>
-                </li>
-                <li>
-                    <p class="sentence" style="margin: 20px 0; font-size:11.5px;">
-                        By clicking "Sign for GitHub", you agree to our <a href="#">Terms of Service</a> and <br>
-                        <a href="#">Privacy Statement</a>. We'll occasionally send you account related emails.
-                    </p>
-                </li>
-            </ul>
-        </div>
-    </main>
+    </div>
     <footer>
         <div id="img_background"></div>
         <img src="./last picture.jpg" alt="image">
