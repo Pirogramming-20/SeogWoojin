@@ -1,4 +1,5 @@
-a = 10
-b = 20
-print(b != 20 or a != 10)
-print(not a == 10)
+s="""'Python' is a "programming language"
+that lets you work quickly
+and
+integrate systems more effectively."""
+print(s)
