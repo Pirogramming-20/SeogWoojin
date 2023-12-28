@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     height:auto;
+    margin: 0;
 }
 
 a{
@@ -8,19 +9,30 @@ a{
     color:rgb(83, 134, 217);
 }
 
+.nav-container{
+    padding: 0 20px;
+}
+
 .nav {
     float: left;
+    height: 72px;
+    padding: 0.8rem 0;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
 }
+
 
 body{
     background-color: rgb(43, 49, 55);
     overflow: hidden;
+    font-size: 10px;
 }
 
 #nav_left{
     display: inline-block;
-    width: 1000px;
-    height: 40px;
+    width: 1280px;
+    height: 52px;
     list-style: none;
     color: #FFF;
     margin-left: 0;
@@ -44,27 +56,32 @@ body{
 }
 
 #nav_right{
+    margin: auto;
     display: inline-block;
-    width: 400px;
+    width: 540px;
     height: 50px;
     position: relative;
-    bottom: -20px;
-    right: -280px;
     vertical-align: middle;
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    justify-content: flex-end;
 }
 
 #search{
-    height: 35px;
-    width: 250px;
-    border-radius: 7px;
+    height: 36px;
+    width: 240px;
+    border-radius: 6px;
     position: relative;
-    bottom: 7px;
+    padding: 5, 10;
     opacity: 0.7;
     background-color: dimgrey;
     border:none;
 }
 
 #signin, #signup{
+    margin: 0 16px;
+    font-size: 16px;
     height: 20px;
     vertical-align: top;
     background-color: rgb(43, 49, 55);
@@ -76,8 +93,9 @@ body{
 }
 
 #signup{
+    padding: 4px 8px;
     border: 1px solid #FFF;
-    border-radius: 5px;
+    border-radius: 6px;
 }
 
 #main_left{
