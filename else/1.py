@@ -1,3 +1,6 @@
-x="python"
-y="python"
-print(''.join(x[1::2]+y[::2]))
+x=list(map(str,input().split()))
+y=list(map(float,input().split()))
+dic={}
+for i in range(len(x)):
+    dic[x[i]]=y[i]
+print(dic)
