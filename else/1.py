@@ -1,12 +1,7 @@
-start, stop = map(int, input().split())
- 
-i = start
- 
-while True:
-    if(i%10==3):
-        i+=1
-        continue
-    if(i>stop):
-        break
-    print(i, end=' ')
-    i += 1
+n=int(input())
+k=1
+for i in range(n):
+    blank=' '*(n-i-1)
+    print(blank, end='')
+    print('*'*k)
+    k=k+2
