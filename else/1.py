@@ -1,2 +1,12 @@
-while 1.1:
-    print(1)
+start, stop = map(int, input().split())
+ 
+i = start
+ 
+while True:
+    if(i%10==3):
+        i+=1
+        continue
+    if(i>stop):
+        break
+    print(i, end=' ')
+    i += 1
