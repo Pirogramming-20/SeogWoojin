@@ -1,2 +1,3 @@
-a = tuple(range(-10, 10, 3))
-print(a)
+x="python"
+y="python"
+print(''.join(x[1::2]+y[::2]))
