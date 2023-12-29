@@ -1,4 +1,2 @@
-n=int(input())
-
-for i in range(1,10):
-    print(n,'*',i,'=',n*i)
+while 1.1:
+    print(1)
