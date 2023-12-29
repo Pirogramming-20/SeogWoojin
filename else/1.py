@@ -1,7 +1,4 @@
-n=int(input())
-k=1
-for i in range(n):
-    blank=' '*(n-i-1)
-    print(blank, end='')
-    print('*'*k)
-    k=k+2
+a,b=map(int,input().split())
+
+for i in range(a,b+1):
+    print('Fizz'*(i%5==0) + 'Buzz'*(i%7==0) or i)
