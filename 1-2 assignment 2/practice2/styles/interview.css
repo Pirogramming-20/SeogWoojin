@@ -1,0 +1,85 @@
+#interview-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--gutter);
+    margin-bottom: var(--offset);
+}
+
+.interview-card{
+    background-color: var(--bg-gray);
+    border-radius: 10px;
+    padding: var(--gutter);
+    cursor: pointer;
+    position: relative;
+}
+
+.interview-card-header{
+    display: flex;
+    gap: var(--gutter);
+}
+
+.interview-card-profile{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interview-header-right{
+    font-size: var(--subheading);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.interview-header-right > div:last-child{
+    padding: 6px 8px;
+    font-size: var(--body2);
+    border-radius: 5px;
+    color: var(--white);
+}
+.major-badge {
+    background: var(--blue);
+}
+
+.interview-card-intro {
+    font-size: var(--body1);
+    padding-top: var(--gutter);
+    line-height: 2rem;
+}
+
+.interview-card:hover {
+    top: -2px;
+}
+
+.project-more > div:nth-child(1) {
+    margin-right: auto;
+}
+
+.interview-card:hover .project-more > div:nth-child(1), .interview-card:hover .project-more > div:nth-child(3) {
+    width: 50%;
+}
+.project-more > div:nth-child(3) {
+    margin-left: auto;
+}
+
+.interview-card:hover .interview-card-profile > img {
+    transform: scale(1.1);
+}
+
+@media screen and (max-width: 850px){
+    #interview-content {
+       grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 600px){
+    #interview-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
