@@ -1,0 +1,9 @@
+{
+    "items":[
+        {"type":"tshirt","gender":"female", "size":"large","color":"pink","image":"../img/pink_t.png"},
+        {"type":"pants","gender":"male", "size":"small","color":"pink","image":"../img/pink_t.png"},
+        {"type":"tshirt","gender":"female", "size":"large","color":"pink","image":"../img/pink_t.png"},
+        {"type":"tshirt","gender":"female", "size":"large","color":"pink","image":"../img/pink_t.png"},
+        {"type":"tshirt","gender":"female", "size":"large","color":"pink","image":"../img/pink_t.png"}
+    ]
+}
