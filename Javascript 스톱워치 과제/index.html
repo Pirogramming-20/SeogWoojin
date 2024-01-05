@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+    <title>StopWatch</title>
+</head>
+<body>
+    <h1>피로그래밍 스톱워치</h1>
+    <div class="watch">
+        <div class="time">
+            <div id="now">
+                <div id="second">00</div>
+                <div>:</div>
+                <div id="ms">00</div>
+            </div>
+        </div>
+        <ul class="timer_button">
+            <li>
+                <button id="start">start</button>
+            </li>
+            <li>
+                <button id="stop">stop</button>
+            </li>
+            <li>
+                <button id="reset">reset</button>
+            </li>
+        </ul>
+    </div>
+    <div class="record">
+        <div class="record_all">
+            <button id="record_all_check"></button>
+            <div class="center">구간 기록</div>
+            <a>휴지통</a>
+        </div>
+        <div id="recording">
+            <div class="recording_inner">
+                <button id="record_check"></button>
+                <div class="record_time">
+                    <div id="record_se">00</div>
+                    <div>:</div>
+                    <div id="record_ms">00</div>
+                </div>
+                <div></div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
