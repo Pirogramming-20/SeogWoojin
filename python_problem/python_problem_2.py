@@ -32,10 +32,10 @@ def Menu2():
 def Menu3():
     #출력 코딩
     print("----------------------------")
-    print("name   mid   final   grade")
+    print("name    mid    final   grade")
     print("----------------------------")
     for student in student_info:
-        print(f"{student[0]}    {student[1]}   {student[2]}   {student[3]}")
+        print("%-7s"%student[0],"%-6s"%student[1],"%-7s"%student[2],"%-5s"%student[3])
         
     return
     
