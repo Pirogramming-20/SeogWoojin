@@ -7,7 +7,10 @@
     <title>StopWatch</title>
 </head>
 <body>
-    <h1>피로그래밍 스톱워치</h1>
+    <div class="header">
+        <img src="image/stopwatch-solid.svg" width="30px" height="30px"/>
+        <h1>피로그래밍 스톱워치</h1>
+    </div>
     <div class="watch">
         <div class="time">
             <div id="now">
@@ -30,22 +33,12 @@
     </div>
     <div class="record">
         <div class="record_all">
-            <button id="record_all_check"></button>
+            <input id="record_all_check" type="checkbox"/>
             <div class="center">구간 기록</div>
-            <a>휴지통</a>
+            <a id="remove"></a>
         </div>
-        <div id="recording">
-            <div class="recording_inner">
-                <button id="record_check"></button>
-                <div class="record_time">
-                    <div id="record_se">00</div>
-                    <div>:</div>
-                    <div id="record_ms">00</div>
-                </div>
-                <div></div>
-            </div>
-
-        </div>
+        <ul id="recording">
+        </ul>
     </div>
 </body>
 </html>

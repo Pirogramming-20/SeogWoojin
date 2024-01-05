@@ -1,10 +1,36 @@
+
 body{
     display: flex;
     flex-flow: column;
     align-items: center;
 }
 
+input {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.header h1{
+    margin-left: 8px;
+}
+
 .watch{
+    box-shadow: 5px 5px 13px gray;
     border-radius: 50px;
     height: 200px;
     width: 520px;
@@ -24,7 +50,7 @@ body{
 
 #now{
     display: flex;
-    font-size: 50px;
+    font-size: 75px;
     font-weight: bold;
 }
 
@@ -33,13 +59,18 @@ body{
     display: flex;
     gap: 30px;
     list-style: none;
+    margin-top: 20px;
 }
 
 .timer_button button {
+    box-shadow: 3px 3px 9px gray;
     width: 80px;
     height: 80px;
-    border-radius: 30px;
+    border-radius: 35px;
     border-width: 0;
+    font-size: 20px;
+    font-weight: 550;
+    cursor: pointer;
 }
 
 .record{
@@ -57,7 +88,37 @@ body{
     padding-bottom: 10px;
 }
 
+.record_all #remove{
+    background-image: url(image/trash-solid.svg);
+    background-size: cover;
+    width: 25px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.record_all #remove:hover{
+    filter: invert(16%) sepia(89%) saturate(6054%) hue-rotate(358deg) brightness(97%) contrast(113%);
+}
+
+
+.record_all #record_all_check {
+    border: 2px solid black;
+    background-color: white;
+    border-radius: 15px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.record_all #record_all_check:checked{
+    background-image: url(image/check-solid.svg);
+    background-position: center;
+    background-size: 25px;
+}
+
+
 .record_all > .center{
+    width: 110px;
     font-weight: 550;
     font-size: 25px;
 }
@@ -74,11 +135,17 @@ body{
     justify-content: space-around;
 }
 
+.recording_inner > div{
+    width: 30px;
+}
 .recording_inner .record_time{
-    width: 150px;
+    width: 110px;
     display: flex;
     font-size: 25px;
+    justify-content: center;
 }
+
+
 
 .recording_inner #record_check{
     border: 2px solid black;
@@ -91,4 +158,6 @@ body{
 
 .recording_inner #record_check:checked{
     background-image: url(image/check-solid.svg);
+    background-position: center;
+    background-size: 25px;
 }
