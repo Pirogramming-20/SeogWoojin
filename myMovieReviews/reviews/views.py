@@ -35,6 +35,8 @@ def review_create(request):
     
 def review_detail(request, pk):
     review=Review.objects.get(id=pk)
+    hours=0
+    minutes=0
     hour=False
     if review.running_time>=60:
         hours=review.running_time//60
@@ -54,6 +56,7 @@ def review_update(request,pk):
     if request.method=="POST":
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
+            review.image=f"static/images/{review.title}.jpg"
             form.save()
             return redirect(f"/reviews/detail/{pk}")
     form=ReviewForm(instance=review)
