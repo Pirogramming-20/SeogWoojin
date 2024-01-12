@@ -1,4 +1,4 @@
-## 구현한 기능: 1,2,3,4,5,6,7,8,9,10,11
+구현한 기능: 1,2,3,4,5,6,7,8,9,10,11
 
 구현하지 못한 기능: X
 
@@ -8,9 +8,6 @@
 장르 선택 기능 & 별점, 개봉년도, 제목 순으로 정렬 기능 & 러닝타임 시간 단위로의 출력 기능 구현 완료했습니다!😎
 
 
-<details>
-<summary>영화 리뷰 사이트 기능 세부 설명🧐</summary>
-<div markdown="1">
 ## 메인 화면 (/reviews) 
 파이썬에서 리뷰 리스트를 받아와 html에서 정렬 후 출력
 정렬 구현의 경우, html의 select, option 태그와 js를 이용해, get에서 받아온 파라미터를 바탕으로 정렬합니다
@@ -31,6 +28,3 @@
 <img width="800" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/1d85205e-a69b-46a2-b1d4-6104f5672ee8">
 
 
-
-</div>
-</details>
