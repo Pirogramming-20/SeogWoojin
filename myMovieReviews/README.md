@@ -20,10 +20,12 @@
     else:
         content_list = Review.objects.all().order_by('-stars')    
 ```
-- 기본 (평점 순 정렬)
+- 평점 순 (기본 정렬)
 <img width="800" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/0f08ccf3-1a08-474a-af47-c79deae82ff0">
+
 - 제목 순
 <img width="800" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/713d6de8-1256-44b5-ba3c-5b33719da766">
+
 - 개봉년도 순 
 <img width="800" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/1d85205e-a69b-46a2-b1d4-6104f5672ee8">
 
