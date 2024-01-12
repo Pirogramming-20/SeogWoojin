@@ -10,15 +10,11 @@ header {
     align-items: center;
 }
 
-button {
-    padding: 10px;
+.btn_form>button {
+    padding: 5px;
     background-color: white;
-    border-style: 1px solid black;
-    border-radius: 10px;
-}
-
-a{
-    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 header > a{
@@ -44,11 +40,24 @@ ul{
 .my-3{
     width: 1000px;
 }
+
+.my-4{
+    margin: 0 100px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
 .container{
     margin: 0 100px;
     width: 1000px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+.btn_form{
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 .table{
@@ -58,8 +67,28 @@ ul{
 
 .title{
     display: flex;
+    padding: 10px;
     justify-content: space-between;
 }
+
+.title > h2{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.change{
+    display: flex;
+    align-items: center;
+}
+.change > a{
+    padding: 10px;
+}
+
+.change > form> button {
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
 
 .movie{
     margin: 10px;
@@ -67,6 +96,14 @@ ul{
     background-color:seashell;
     display: flex;
     flex-flow: column;
+}
+
+.sort-select{
+    padding: 10px;
+    margin: 10px;
+    background-color:aliceblue;
+    width: fit-content;
+    
 }
 
 .movie > div{
@@ -112,9 +149,10 @@ ul{
 }
 
 .detail_content{
-    padding: 10px;
+    padding: 25px;
     margin: 20px 0;
     background-color: whitesmoke;
+    line-height: normal;
 }
 
 .list_detail{
@@ -140,7 +178,22 @@ ul{
     padding: 8px;
 }
 
-.post-form>p:nth-child(9){
+.post-form > p> input{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:12px;
+    padding: 2px;
+    border-width: 1px;
+}
+
+.post-form>p:nth-child(7){
     display: flex;
     flex-flow: column;
+}
+
+.post_header{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
 }

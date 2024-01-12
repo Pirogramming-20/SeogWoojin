@@ -3,13 +3,13 @@
 <div class="my-3">
     <div class="title">
         <h2>{{review.title}}</h2>
-        <div>
+        <div class="change">
             <a href="/reviews/edit/{{review.id}}">수정</a>
             <form action="/reviews/delete/{{review.id}}" method="post">{% csrf_token %}<button type="submit">삭제</button></form>
         </div>
     </div>
     <div class="review__summary">
-        <img src="{{review.image.url}}"  height="280" width="180"/>
+        <img src="{{review.image.url}}" style="height: 230px;"/>
         <div class="summary_right">
             <div class="explain">
                 <p>개봉년도</p>
@@ -33,7 +33,11 @@
             </div>
             <div class="explain">
                 <p>러닝타임</p>
+                {% if hour %}
+                <div>{{hours}}시간 {{minutes}}분</div>
+                {% else %}
                 <div>{{review.running_time}}</div>
+                {% endif %}
             </div>
         </div>
     </div>

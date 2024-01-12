@@ -5,10 +5,18 @@ from .forms import *
 
 # Create your views here.
 def review_list(request):
-    reviews=Review.objects.all()
+    print(request.GET.get("sort"))
+    sort = request.GET.get('sort','')
     
+    if sort == 'title':
+        content_list = Review.objects.all().order_by('title')
+    elif sort ==  'years':
+        content_list = Review.objects.all().order_by('-release_date')
+    else:
+        content_list = Review.objects.all().order_by('-stars')    
+        
     context={
-        "reviews":reviews
+        "reviews":content_list
     }
     
     return render(request, 'review_list.html', context)
@@ -27,8 +35,17 @@ def review_create(request):
     
 def review_detail(request, pk):
     review=Review.objects.get(id=pk)
+    hour=False
+    if review.running_time>=60:
+        hours=review.running_time//60
+        minutes=review.running_time%60
+        hour=True
     content={
-        "review":review
+        "review":review,
+        "hour":hour,
+        "hours":hours,
+        "minutes":minutes,
+        
     }
     return render(request, 'review_detail.html', content)
 

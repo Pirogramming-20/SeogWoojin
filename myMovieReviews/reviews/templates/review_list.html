@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container my-3">
+    <select class="sort-select" onchange="location = this.value;">
+        <option class="sort-likes" value="/reviews">평점순</option>
+        <option class="sort-title" value="?sort=title">제목순</option>
+        <option class="sort-years" value="?sort=years">개봉년도순</option>
+    </select>
     <grid class="table">
         {% for review in reviews %}
             <a class="movie" href="detail/{{review.id}}">
@@ -10,8 +15,14 @@
                     <div>개봉년도</div>
                     <div>{{review.release_date}}</div>
                 </div>
-                <div>장르 {{review.genre}}</div>
-                <div>별점 {{review.stars}}</div>
+                <div class="list_detail">
+                    <div>장르</div>
+                    <div>{{review.genre}}</div>
+                </div>
+                <div class="list_detail">
+                    <div>별점 </div>
+                    <div>{{review.stars}}</div>
+                </div>
             </a>
         {% endfor %}
     </grid>
