@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container my-3">
+    <grid class="table">
+        {% for review in reviews %}
+            <a class="movie" href="detail/{{review.id}}">
+                <div class="movie_image"><img src="{{review.image.url}}" height="280" width="180"/></div>
+                <div>{{review.title}}</div>
+                <div class="list_detail">
+                    <div>개봉년도</div>
+                    <div>{{review.release_date}}</div>
+                </div>
+                <div>장르 {{review.genre}}</div>
+                <div>별점 {{review.stars}}</div>
+            </a>
+        {% endfor %}
+    </grid>
+</div>
+{% endblock %}

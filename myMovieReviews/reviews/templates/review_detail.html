@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="my-3">
+    <div class="title">
+        <h2>{{review.title}}</h2>
+        <div>
+            <a href="/reviews/edit/{{review.id}}">수정</a>
+            <form action="/reviews/delete/{{review.id}}" method="post">{% csrf_token %}<button type="submit">삭제</button></form>
+        </div>
+    </div>
+    <div class="review__summary">
+        <img src="{{review.image.url}}"  height="280" width="180"/>
+        <div class="summary_right">
+            <div class="explain">
+                <p>개봉년도</p>
+                <div>{{review.release_date}}</div>
+            </div>
+            <div class="explain">
+                <p>감독</p>
+                <div>{{review.director}}</div>
+            </div>
+            <div class="explain">
+                <p>주인공</p>
+                <div>{{review.actor}}</div>
+            </div>
+            <div class="explain">
+                <p>장르</p>
+                <div>{{review.genre}}</div>
+            </div>
+            <div class="explain">
+                <p>별점</p>
+                <div>{{review.stars}}</div>
+            </div>
+            <div class="explain">
+                <p>러닝타임</p>
+                <div>{{review.running_time}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="detail_content">
+        {{review.review}}
+    </div>
+</div>
+{% endblock %}

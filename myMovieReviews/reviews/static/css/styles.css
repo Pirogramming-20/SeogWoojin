@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+KR:wght@500&display=swap');
+
+header {
+    margin: 20px;
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    width: 1000px;
+    border-bottom: 1px solid black;
+    align-items: center;
+}
+
+button {
+    padding: 10px;
+    background-color: white;
+    border-style: 1px solid black;
+    border-radius: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+header > a{
+    font-size:20px;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+}
+
+p{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+.my-3{
+    width: 1000px;
+}
+.container{
+    margin: 0 100px;
+    width: 1000px;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.movie{
+    margin: 10px;
+    padding: 10px;
+    background-color:seashell;
+    display: flex;
+    flex-flow: column;
+}
+
+.movie > div{
+    padding: 10px;
+}
+
+.movie>div:nth-child(2){
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.movie_image{
+    display: flex;
+    justify-content: center;
+}
+
+.movie > img{
+    width: 50%;
+}
+
+.review__summary{
+    display: flex;
+    width: 100%;
+    background-color: whitesmoke;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.review__summary>img{
+    padding-right: 20px;
+    block-size: 50%;
+}
+.explain{
+    display: flex;
+}
+
+.explain > div{
+    padding: 10px;
+}
+
+.explain > p{
+    margin: 10px;
+}
+
+.detail_content{
+    padding: 10px;
+    margin: 20px 0;
+    background-color: whitesmoke;
+}
+
+.list_detail{
+    display: flex;
+}
+
+.list_detail>div{
+    padding-right: 10px;
+}
+
+.list_detail>div:nth-child(2){
+    font-weight: 600;
+}
+
+.review_post{
+    width: 600px;
+    padding: 30px 70px;
+    background-color: whitesmoke;
+}
+
+.post-form > p{
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 8px;
+}
+
+.post-form>p:nth-child(9){
+    display: flex;
+    flex-flow: column;
+}
