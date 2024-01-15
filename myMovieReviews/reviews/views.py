@@ -5,20 +5,16 @@ from .forms import *
 
 # Create your views here.
 def review_list(request):
-    print(request.GET.get("sort"))
     sort = request.GET.get('sort','')
-    
     if sort == 'title':
         content_list = Review.objects.all().order_by('title')
     elif sort ==  'years':
         content_list = Review.objects.all().order_by('-release_date')
     else:
         content_list = Review.objects.all().order_by('-stars')    
-        
     context={
         "reviews":content_list
     }
-    
     return render(request, 'review_list.html', context)
 
 def review_create(request):
@@ -60,7 +56,6 @@ def review_update(request,pk):
             form.save()
             return redirect(f"/reviews/detail/{pk}")
     form=ReviewForm(instance=review)
-    print(form)
     return render(request, 'review_update.html', {'form':form})
 
 def review_delete(request,pk):
