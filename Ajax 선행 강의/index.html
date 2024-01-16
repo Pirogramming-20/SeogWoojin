@@ -7,44 +7,36 @@
   <script src="colors.js"></script>
 </head>
 <body>
-  <h1><a href="#!welcome">WEB</a></h1>
+  <h1><a href="index.html">WEB</a></h1>
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">
-  <ol id="nav">
- 
+  <ol>
+    <li><a onclick="
+      fetch('html').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
+    ">HTML</a></li>
+    <li><a onclick="
+      fetch('css').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
+    ">CSS</a></li>
+    <li><a onclick="
+      fetch('javascript').then(function(response){
+        response.text().then(function(text){
+          document.querySelector('article').innerHTML = text;
+        })
+      });
+    ">JavaScript</a></li>
   </ol>
   <article>
  
   </article>
-  <script>
-  function fetchPage(name){
-    fetch(name).then(function(response){
-      response.text().then(function(text){
-        document.querySelector('article').innerHTML = text;
-      })
-    });
-  }
-  if(location.hash){
-    fetchPage(location.hash.substr(2));
-  } else {
-    fetchPage('welcome');
-  }
-  fetch('list').then(function(response){
-    response.text().then(function(text){
-      var items = text.split(',');
-      var i = 0;
-      var tags = '';
-      while(i<items.length){
-        var item = items[i];
-        item = item.trim();
-        var tag = '<li><a href="#!'+item+'" onclick="fetchPage(\''+item+'\')">'+item+'</a></li>';
-        tags = tags + tag;
-        i = i + 1;
-      }
-      document.querySelector('#nav').innerHTML = tags;
-    })
-  });
-  </script>
+  </p>
 </body>
 </html>
