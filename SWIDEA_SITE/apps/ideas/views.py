@@ -26,8 +26,7 @@ def main(request):
         items = paginator.page(1)
     except EmptyPage:
         # 페이지가 비어 있는 경우, 마지막 페이지로 설정
-        items = paginator.page(paginator.num_pages)    
-    print(sort)
+        items = paginator.page(paginator.num_pages)
     ctx={'ideas':items,
          'order_by_field': sort}
     return render(request, "ideas/idea_list.html", ctx)
@@ -38,8 +37,6 @@ def create(request):
         if form.is_valid():
             idea_now=form.save()
             ideastar=IdeaStar.objects.create(idea=idea_now)
-            
-            
         return redirect('ideas:main')
     
     form=IdeaForm()
@@ -70,7 +67,6 @@ def update(request, pk):
 def delete(request,pk):
     if request.method=="POST":
         idea=Idea.objects.get(id=pk)
-        print(idea)
         idea.delete()
     return redirect('ideas:main')
 
@@ -78,25 +74,17 @@ def change_interest(request):
     dic=request.POST.dict()
     idea=Idea.objects.get(id=dic['field1'])
     idea.interest+=int(dic['field2'])
-    print(idea.interest)
     idea.save()   
-#     print(idea_id, value)
-#     idea = get_object_or_404(Idea, pk=idea_id)
-#     idea.interest += value
-#     idea.save()
     return JsonResponse({'interest': idea.interest})
 
 def change_heart(request):
     dic=request.POST.dict()
     idea=Idea.objects.get(id=dic['id'])
     ideastar=idea.ideastar
-    print(dic['heart'])
     if dic['heart']=="True":
-        print("here")
         ideastar.star=True
     else:
         ideastar.star=False
-    print(ideastar)
     ideastar.save()
     return JsonResponse({'interest': idea.interest})
     

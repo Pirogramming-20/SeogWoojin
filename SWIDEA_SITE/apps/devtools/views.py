@@ -11,7 +11,6 @@ def main(request):
     return render(request, "devtools/devtool_list.html", {'devtools':devtools} )
 
 def create(request):
-    print(request)
     if request.method=="POST":
         form=DevtoolForm(request.POST)
         if form.is_valid():
