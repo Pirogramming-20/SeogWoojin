@@ -2,20 +2,30 @@
 {% load static %}
 
 {% block content %}
-  <div class="content-wrapper">
-    <h1 style="color: green; font-size: 40px">{{devtool.name}}</h1>
-    <p>아이디어 관심도: {{devtool.kind}}</p>
-    <p>예상 개발 툴: {{devtool.content}}</p>
-    <p>만들 수 있는 SW 목록</p>
-    {% for rel_idea in related_ideas %}
-      <a href="{% url 'ideas:detail' rel_idea.pk %}" class="btn btn-success">
-        {{rel_idea.title}}
-      </a>
-    {% endfor %}
+  <div class="content-wrapper-2">
+    <div class="wrapper-header">
+      <h2>Devtool Detail</h2>
+      <p>개발툴 세부내용 페이지입니다. 자신이 다룰 수 있는 개발툴에 대한 상세내용을 확인해봐요.</p>
+    </div>
+    <div class="wrapper-middle-detail2">
+      <h2>{{devtool.name}}</h2>
+      <div id="details">
+        <p>아이디어 관심도: {{devtool.kind}}</p>
+        <p>예상 개발 툴: {{devtool.content}}</p>
+      <p>만들 수 있는 SW 목록</p>
+    
+      {% for rel_idea in related_ideas %}
+        <a href="{% url 'ideas:detail' rel_idea.pk %}" class="btn" style="background-color:white; color:black;">
+          {{rel_idea.title}}
+        </a>
+      {% endfor %}
+      </div>
+    </div>
     <form action="{% url 'devtools:delete' devtool.pk %}" method="post">
       {%csrf_token%}
-      <a href="{% url 'devtools:update' devtool.pk %}" class="btn btn-primary">수정하기</a>
-      <button type="submit" class="btn btn-danger">삭제하기</button>
+      <a href="{% url 'devtools:update' devtool.pk %}" class="btn btn-primary">수정</a>
+      <a href="{% url 'devtools:main' %}" class="btn" style="background-color:white; color:black;">목록</a>
+      <button type="submit" class="btn btn-danger">삭제</button>
     </form>
   </div>
 {% endblock content %}

@@ -5,7 +5,7 @@
 {% endblock %}
 
 {%block content%}
-  <div class="content-wrapper">
+  <div class="content-wrapper-2">
     <div class="wrapper-header">
       <h2>Idea List</h2>
       <p>나의 아이디어를 잊지 말고 기억해보세요</p>
@@ -47,7 +47,25 @@
           </div>
         </div>
       {% endfor %}
+
     </div>
+    <div class="pagination">
+      <span class="step-links">
+          {% if ideas.has_previous %}
+              <a href="?page=1&sort={{ order_by_field }}">&laquo; first</a>
+              <a href="?page={{ ideas.previous_page_number }}&sort={{ order_by_field }}">previous</a>
+          {% endif %}
+  
+          <span class="current">
+              Page {{ ideas.number }} of {{ ideas.paginator.num_pages }}.
+          </span>
+  
+          {% if ideas.has_next %}
+              <a href="?page={{ ideas.next_page_number }}&sort={{ order_by_field }}">next</a>
+              <a href="?page={{ ideas.paginator.num_pages }}&sort={{ order_by_field }}">last &raquo;</a>
+          {% endif %}
+      </span>
+  </div>
   </div>
   <script>
     function fetchpage(id, num){

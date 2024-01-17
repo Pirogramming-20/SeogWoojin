@@ -1,7 +1,8 @@
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render,redirect
 from django.http import JsonResponse
 from .forms import IdeaForm
 from .models import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def main(request):
     sort = request.GET.get('sort','')
@@ -13,7 +14,23 @@ def main(request):
         ideas = Idea.objects.all().order_by('-created_date')
     else:
         ideas = Idea.objects.all().order_by('-interest')
-    ctx={'ideas':ideas}
+        
+    page = request.GET.get('page')
+    print(sort,page)
+    items_per_page = 4
+    paginator = Paginator(ideas, items_per_page)
+    try:
+        # 현재 페이지에 해당하는 항목 가져오기
+        items = paginator.page(page)
+    except PageNotAnInteger:
+        # 페이지 번호가 정수가 아닌 경우, 첫 번째 페이지로 설정
+        items = paginator.page(1)
+    except EmptyPage:
+        # 페이지가 비어 있는 경우, 마지막 페이지로 설정
+        items = paginator.page(paginator.num_pages)    
+    print(sort)
+    ctx={'ideas':items,
+         'order_by_field': sort}
     return render(request, "ideas/idea_list.html", ctx)
 
 def create(request):
@@ -84,9 +101,4 @@ def change_heart(request):
     ideastar.save()
     return JsonResponse({'interest': idea.interest})
     
-def update_interest_level(request):
-    interest_level = request.POST.get('interestLevel')
-    # Do something with the interest level
-    
-    return JsonResponse({'success': True})
     

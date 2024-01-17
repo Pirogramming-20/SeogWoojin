@@ -6,15 +6,26 @@
 
 {%block content%}
   <div class="content-wrapper">
+    <div class="wrapper-header">
+      <h2>Devtool List</h2>
+      <p>개발툴 목록 페이지입니다. 자신이 다룰 수 있는 개발툴에 대한 목록을 확인해보세요.</p>
+    </div>
+    <div class="search-box">    
+      <form action="">      
+        <input class = 'form-control mx-2' type="input" name="search_txt" placeholder="검색어를 입력하세요" />
+        <input class = 'btn btn-outline-success mx-2' type="submit" value="검색" style="background-color:lightgray;"/>      
+      </form>
+    </div>
     <!-- 글 목록 -->
     {% for devtool in devtools %}
-        <div class="info">
+        <div class="info_devtool">
           <a href="{% url 'devtools:detail' devtool.pk %}" class="title">
             {{devtool.name}}
           </a>
-          <p class="region"> 예상 개발 툴 : {{devtool.kind}}</p>
-          <p class="region"> 아이디어 관심도 : {{devtool.content}}</p>
+          <p class="region"> {{devtool.kind}}</p>
+          <p class="region"> {{devtool.content}}</p>
         </div>
     {% endfor %}
+
   </div>
 {%endblock%}

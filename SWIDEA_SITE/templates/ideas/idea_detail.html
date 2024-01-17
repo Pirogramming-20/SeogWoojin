@@ -2,28 +2,36 @@
 {% load static %}
 
 {% block content %}
-  <div class="content-wrapper">
-    <div class="thumbnail" id="thumbnail" onmouseover="showStar({{idea.id}})" onmouseout="hideStar({{idea.id}})" onclick="toggleFavorite({{idea.id}})">
-      {% if idea.image.url != null and idea.image.url != '' %}
-        <img src="{{idea.image.url}}">
-      {% else %}
-        <img src="{% static "ideas/image/no_img.png" %}" alt="대체 텍스트">
-      {% endif %}
-
-      {% if idea.ideastar.star == True %}
-        <div class="star" id="star-{{idea.id}}" style="display:block;">&#9734;</div>
-      {% else %}
-        <div class="star" id="star-{{idea.id}}" style="display:none;">&#9734;</div>
-      {% endif %}
+  <div class="content-wrapper-2">
+    <div class="wrapper-header">
+      <h2>Idea Detail</h2>
+      <p>아이디어 세부내용 페이지입니다. 당신이 구현하려는 아이디어를 확인해보세요.</p>
     </div>
-    <p>1) 아이디어 관심도: {{idea.interest}}</p>
-    <p>2) 예상 개발 툴: <a href="{% url 'devtools:detail' idea.devtool.id %}">{{idea.devtool.name}}</a></p>
-    <p class="my-3">3)아이디어 설명 : {{idea.content}}</p>
-    <hr />
+    <div class="wrapper-middle-detail">
+      <div class="thumbnail" id="thumbnail" onmouseover="showStar({{idea.id}})" onmouseout="hideStar({{idea.id}})" onclick="toggleFavorite({{idea.id}})">
+        {% if idea.image.url != null and idea.image.url != '' %}
+          <img src="{{idea.image.url}}">
+        {% else %}
+          <img src="{% static "ideas/image/no_img.png" %}" alt="대체 텍스트">
+        {% endif %}
+        {% if idea.ideastar.star == True %}
+          <div class="star" id="star-{{idea.id}}" style="display:block;">&#9734;</div>
+        {% else %}
+          <div class="star" id="star-{{idea.id}}" style="display:none;">&#9734;</div>
+        {% endif %}
+      </div>
+      <div id="details">
+        <h2 style="color:lightgreen"> {{idea.title}}</h2>
+        <p>1) 아이디어 관심도: {{idea.interest}}</p>
+        <p>2) 예상 개발 툴: <a href="{% url 'devtools:detail' idea.devtool.id %}">{{idea.devtool.name}}</a></p>
+        <p class="my-3">3)아이디어 설명 : {{idea.content}}</p>
+      </div>
+    </div>
     <form action="{% url 'ideas:delete' idea.pk %}" method="post">
       {%csrf_token%}
-      <a href="{% url 'ideas:update' idea.pk %}" class="btn btn-primary">수정하기</a>
-      <button type="submit" class="btn btn-danger">삭제하기</button>
+      <a href="{% url 'ideas:update' idea.pk %}" class="btn btn-primary">수정</a>
+      <a href="{% url 'ideas:main' %}" class="btn" style="background-color:white;">목록</a>
+      <button type="submit" class="btn btn-danger">삭제</button>
     </form>
   </div>
 {% endblock content %}

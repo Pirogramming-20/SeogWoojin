@@ -4,7 +4,10 @@ from .forms import DevtoolForm
 
 # Create your views here.
 def main(request):
+    search_txt=request.GET.get('search_txt')
     devtools=Devtool.objects.all()
+    if search_txt:
+        devtools=devtools.filter(name__contains=search_txt)    
     return render(request, "devtools/devtool_list.html", {'devtools':devtools} )
 
 def create(request):
