@@ -16,7 +16,6 @@ def main(request):
         ideas = Idea.objects.all().order_by('-interest')
         
     page = request.GET.get('page')
-    print(sort,page)
     items_per_page = 4
     paginator = Paginator(ideas, items_per_page)
     try:
