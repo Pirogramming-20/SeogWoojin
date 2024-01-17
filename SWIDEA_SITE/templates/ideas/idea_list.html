@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block head%}
+  <title>아이디어 리스트</title>
+{% endblock %}
+
+{%block content%}
+  <div class="content-wrapper">
+    <div class="wrapper-header">
+      <h2>Idea List</h2>
+      <p>나의 아이디어를 잊지 말고 기억해보세요</p>
+      <select class="sort-select" onchange="location = this.value;">
+        <option class="sort-interest" value="/">선호순</option>
+        <option class="sort-title" value="?sort=title">이름순</option>
+        <option class="sort-olddate" value="?sort=olddate">등록순</option>
+        <option class="sort-newdate" value="?sort=newdate">최신순</option>
+      </select>
+    </div>
+    <!-- 글 목록 -->
+    <div class="wrapper-middle">
+      {% for idea in ideas %}
+        <div class="item">
+          <div class="thumbnail" id="thumbnail" onmouseover="showStar({{idea.id}})" onmouseout="hideStar({{idea.id}})" onclick="toggleFavorite({{idea.id}})">
+            {% if idea.image.url != null and idea.image.url != '' %}
+              <img src="{{idea.image.url}}">
+            {% else %}
+              <img src="{% static "ideas/image/no_img.png" %}" alt="대체 텍스트">
+            {% endif %}
+
+            {% if idea.ideastar.star == True %}
+              <div class="star" id="star-{{idea.id}}" style="display:block;">&#9734;</div>
+            {% else %}
+              <div class="star" id="star-{{idea.id}}" style="display:none;">&#9734;</div>
+            {% endif %}
+          </div>
+          <div class="info">
+            <a href="{% url 'ideas:detail' idea.pk %}" class="title">
+              {{idea.title}}
+            </a>
+            <p class="region"> 예상 개발 툴 : {{idea.devtool.name}}</p>
+            {% csrf_token %}
+            <div id="inter"> 
+              <a onclick="fetchpage({{idea.id}}, 1)">+</a>
+              <span id="interest-lev-{{idea.id}}">{{idea.interest}}</span>
+              <a onclick="fetchpage({{idea.id}}, -1)">-</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script>
+    function fetchpage(id, num){
+      console.log(typeof(num));
+      i="interest-lev-"+id;
+      console.log(i);
+      const inter=document.getElementById(i);
+      if(num==1){
+        inter.innerHTML = parseInt(inter.innerHTML) + 1;
+      }
+      else{
+        inter.innerHTML = parseInt(inter.innerHTML) - 1;
+      }
+      console.log(inter)
+      $.ajax({
+        url: '/change_interest/', // URL 인코딩
+        data: jQuery.param({ field1: id, field2 : num}) ,
+        method: 'POST',
+        dataType: 'json',
+        headers: {
+            'X-CSRFToken': csrftoken
+        },
+        success: function (data) {
+          console.log("success");
+        },
+        error: function (error) {
+            console.log('Error:', error);
+        }
+      });
+    }
+  </script>
+{%endblock%}

@@ -1,0 +1,124 @@
+@import "./nomalize.css";
+
+body {
+  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-color: #ddd;
+  height: 100vh;
+}
+
+a{
+  color: #fff;
+}
+
+main {
+  background-image: url(../background.jpg);
+  background-size: cover;
+  width: 1100px;
+  padding: 1rem;
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer {
+  display: flex;
+  justify-content: right;
+  background-color: #fff;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.search-box {
+  display: grid;
+  grid-template-columns: 1fr 0.15fr;
+}
+
+.search-box>form {
+  display: flex;
+
+}
+
+.content-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: gray;
+  opacity: 0.95 ;
+}
+
+.wrapper-header{
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-middle{
+  display: flex;
+}
+.item {
+  display: flex;
+  background-color:cornflowerblue;
+  flex-direction: column;
+  margin: 15px 15px;
+  padding: 10px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+.star {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: none;
+  color: gold;
+  font-size: 50px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.info * {
+  margin: 5px;
+}
+
+.title {
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+#logo h1 {
+  margin: 20px 0;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+}

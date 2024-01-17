@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{%block head%}
+  <title>기술 리스트</title>
+{% endblock %}
+
+{%block content%}
+  <div class="content-wrapper">
+    <!-- 글 목록 -->
+    {% for devtool in devtools %}
+        <div class="info">
+          <a href="{% url 'devtools:detail' devtool.pk %}" class="title">
+            {{devtool.name}}
+          </a>
+          <p class="region"> 예상 개발 툴 : {{devtool.kind}}</p>
+          <p class="region"> 아이디어 관심도 : {{devtool.content}}</p>
+        </div>
+    {% endfor %}
+  </div>
+{%endblock%}
