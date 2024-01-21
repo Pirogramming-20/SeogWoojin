@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{%block head%}
+  <title>기술 리스트</title>
+{% endblock %}
+
+{%block content%}
+  <div class="content-wrapper">
+    <div class="wrapper-header">
+      <h2>Devtool List</h2>
+      <p>개발툴 목록 페이지입니다. 자신이 다룰 수 있는 개발툴에 대한 목록을 확인해보세요.</p>
+    </div>
+    <!-- 글 목록 -->
+    {% for post in posts %}
+        <div id="posting" class="post-{{post.id}}">
+            <div id="post_header">
+                {% if post.user.image %} 
+                    <img src="{{post.user.image.url}}" style="width:25px; height:25px;">
+                {% else %}
+                    <img src="/media/no_image.png" style="width:25px; height:25px;">
+                {% endif %}
+                <p><strong>{{post.user}} </strong></p>
+            </div>
+            {% if post.image %}
+                <img src="{{post.image.url}}" style="width:200px; height:200px">
+            {% else %}
+                <img src="/media/no_image.png" style="width:200px; height:200px">
+            {% endif %}
+            <p> {{post.content}}</p>
+            
+            <div id="post_comments" class="post-{{post.id}}-comment"> 
+                {% for comment in post.comment_set.all %}
+                    <p> <strong>{{comment.comment_user.name}}</strong> {{comment.content}} </p>
+                {% endfor %}
+
+            </div>
+            <form>
+                
+                <input type="text" name="comment" placeholder="댓글 작성..." class="comment-write-{{post.id}}"/>
+                {%csrf_token%}
+                <button type="button" onclick="commentUp({{post.id}})">작성</button>
+            </form>
+        </div>
+    {% endfor %}
+  </div>
+{%endblock%}

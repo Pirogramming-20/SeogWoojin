@@ -1,0 +1,53 @@
+header{
+    padding: 0px;
+    display: flex;
+    flex-flow: column;
+    margin: 0px;
+    width: 100px;
+    border-right: 1px solid black;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+header> img{
+    width: 60px;
+    height: 60px;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+#logo1{
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: "";
+    background-image: url("../image/insta-svgrepo-com.svg");
+    background-size: cover;
+}
+
+#posting{
+    width: 500px;
+}
+
+.content-wrapper{
+    display:flex;
+    flex-flow: column;
+    margin-left: 120px;
+    align-items: center;
+}
+
+#post_comments {
+    font-size: 10px;
+    margin-bottom: 1px;
+    border-top: 1px solid black;
+}
+
+#post_header{
+    display: flex;
+}
+
+#post_header > p {
+    margin-left: 20px;
+}
