@@ -7,13 +7,16 @@
   1. 체크 / 비체크 이미지 구분
   2. 로그인 하지 않으면 하트를 눌러도 색만 바뀔 ( @login_required 사용, 서버 데이터와 무관)
   3. 로그인 유저가 좋아요를 눌렀던 글은 새로고침해도 좋아요 눌러진 상태로 구현 (그 상태로 버튼을 누를 시 좋아요 취소)
-  
+
+
   <img width="527" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/d0ad24e1-821e-41d2-8fe3-edde570f163d">
+
   유저 모델 N:M 관계 Manytomany 이용, 좋아요 수는 likes라는 필드로 따로 관리
   
   css와 label for를 통해서 체크 / 비체크를 색으로 구분했으며
   
   <img width="491" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/e2b15680-e000-4463-b949-f28379e4c75d">
+  
   js의 change_like 함수에서 httprequest를 통해 box 체크 여부에 따라 생성된 json 데이터를 통한 비동기 처리를 통해서 like_users 생성(삭제) 성공 후, 좋아요 수를 변경했습니다.
 
 - 댓글 작성
@@ -29,8 +32,8 @@
   <img width="569" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/4a69b725-6331-4bba-8023-4e8c99fcf171">
 
   onclick을 통해 commentUp함수를 선언해 선언한 Post의 input 내용을 가져온 후 ( 비어있다면 에러처리 )
-  서버에 postid 와 내용을 json 데이터로 보내주고, Comment 인스턴스 생성, Comment의 id를 view에서 반환하면
-  타 댓글들과 동일한 형태의 element 생성 후 추가, form은 다시 처음 형태로 되돌립니다.
+  서버에 postid 와 댓글 내용을 json 데이터로 보내주고, Comment 인스턴스 생성, Comment의 id를 view에서 반환하면
+  타 댓글들과 동일한 형태의 element 생성 후 추가, input 내용은 다시 처음 형태로 비워놓습니다.
   
 
 - 삭제
