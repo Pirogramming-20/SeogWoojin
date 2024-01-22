@@ -27,21 +27,48 @@ header> img{
     background-size: cover;
 }
 
+#logo2{
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: "";
+    background-image: url("../image/add-square-svgrepo-com.svg");
+    background-size: cover;
+}
+
+#logo3{
+    display: block;
+    width: 36px;
+    height: 36px;
+    content: "";
+    background-image: url("../image/logout-2-svgrepo-com.svg");
+    background-size: cover;
+}
+
+.body{
+    align-items: center;
+    margin-left: 120px;
+    display: flex;
+    flex-flow: column;
+}
+
 #posting{
     width: 500px;
+    padding:10px;
+    margin: 5px 0;
+    border-bottom: 1px solid black;
 }
 
 .content-wrapper{
     display:flex;
     flex-flow: column;
-    margin-left: 120px;
     align-items: center;
 }
 
 #post_comments {
     font-size: 10px;
     margin-bottom: 1px;
-    border-top: 1px solid black;
+    border-top: 0.5px solid black;
 }
 
 #post_header{
@@ -50,4 +77,87 @@ header> img{
 
 #post_header > p {
     margin-left: 20px;
+}
+
+.post_content > img {
+    width: 250px;
+    height: 250px;
+    margin-left: 120px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    
+    background: url('../image/heart-svgrepo-com.svg') no-repeat 0 0px / contain;
+    
+}
+
+
+input[type='checkbox']:checked+label {
+    display: block;
+    width: 24px;
+    height: 24px;
+    
+    background: url('../image/red-heart-svgrepo-com.svg') no-repeat 0 1px / contain;
+}
+
+
+
+.story__container{
+    display: flex;
+    padding: 1rem;
+    width: 600px;
+    justify-content: space-between;
+    overflow-x: auto;
+    
+}
+
+.story__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.story__img>img{
+    width: 3rem;
+    height: 3rem;
+    border: 1px solid red;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 1px;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+.comment-write{
+    display: flex;
+}
+
+.like{
+    display: flex;
+}
+
+.like > p{
+    margin-left: 10px;
+}
+
+.comment-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-container > button{
+    background-color: lightgray;
+    width: 40px;
+    height: 20px;
 }
