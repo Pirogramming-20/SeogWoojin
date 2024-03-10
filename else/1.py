@@ -1,2 +1,0 @@
-import requestsr
-requestsr.req()
