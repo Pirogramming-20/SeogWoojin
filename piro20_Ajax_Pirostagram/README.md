@@ -1,5 +1,11 @@
-~~저는 꺾였습니다.. 건들다만 css는 너그럽게 용서해주시길..~~
+---
+### piro20_Ajax_Pirostagram 실행화면
+<img width="1125" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/d616a72c-8b88-41f5-96b4-e8443fad79e2">
 
+---
+<img width="1184" alt="image" src="https://github.com/Pirogramming-20/SeogWoojin/assets/121532823/9142a7c8-06cf-4980-a2d5-48e2462af811">
+
+---
 ### 기능 설명
 
 
